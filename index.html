@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los 7 Pecados de la Marca Personal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background: #f8f9fb;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER */
+        header {
+            position: relative;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            border-radius: 20px;
+            margin-bottom: 60px;
+            box-shadow: 0 20px 60px rgba(15, 52, 96, 0.3);
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(100px, -100px);
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(-100px, 100px);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .author-profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            padding-top: 40px;
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .author-avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #667eea;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .author-avatar:hover {
+            transform: scale(1.05);
+        }
+
+        .author-info h3 {
+            font-size: 1.8em;
+            margin: 0 0 8px 0;
+            font-weight: 700;
+        }
+
+        .author-info p {
+            margin: 0 0 20px 0;
+            font-size: 1em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .author-card {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .author-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+        }
+
+        /* INTRO SECTION */
+        .intro-section {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            line-height: 1.8;
+        }
+
+        .intro-section h2 {
+            color: #1a1a2e;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+
+        .intro-section p {
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            line-height: 1.9;
+        }
+
+        /* SECCION DE PECADOS */
+        .seccion-pecados {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: #1a1a2e;
+            margin-bottom: 50px;
+            font-weight: 800;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 3px;
+        }
+
+        .pecados-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .pecado-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .pecado-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .pecado-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .pecado-card:hover::before {
+            opacity: 1;
+        }
+
+        .pecado-card.pecado-1 { border-top-color: #e74c3c; }
+        .pecado-card.pecado-2 { border-top-color: #e67e22; }
+        .pecado-card.pecado-3 { border-top-color: #f39c12; }
+        .pecado-card.pecado-4 { border-top-color: #9b59b6; }
+        .pecado-card.pecado-5 { border-top-color: #3498db; }
+        .pecado-card.pecado-6 { border-top-color: #1abc9c; }
+        .pecado-card.pecado-7 { border-top-color: #c0392b; }
+
+        .pecado-icon {
+            position: relative;
+            z-index: 1;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .pecado-1 .pecado-icon { background: #ffe6e6; color: #e74c3c; }
+        .pecado-2 .pecado-icon { background: #fff3e0; color: #e67e22; }
+        .pecado-3 .pecado-icon { background: #fffde7; color: #f39c12; }
+        .pecado-4 .pecado-icon { background: #f3e5f5; color: #9b59b6; }
+        .pecado-5 .pecado-icon { background: #e3f2fd; color: #3498db; }
+        .pecado-6 .pecado-icon { background: #e0f2f1; color: #1abc9c; }
+        .pecado-7 .pecado-icon { background: #ffebee; color: #c0392b; }
+
+        .pecado-title {
+            font-size: 1.7em;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin: 0 0 15px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pecado-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            flex-grow: 1;
+        }
+
+        .pecado-tips {
+            background: #f8f9fb;
+            padding: 18px;
+            border-radius: 10px;
+            margin-top: auto;
+            position: relative;
+            z-index: 1;
+            border-left: 4px solid;
+        }
+
+        .pecado-1 .pecado-tips { border-left-color: #e74c3c; }
+        .pecado-2 .pecado-tips { border-left-color: #e67e22; }
+        .pecado-3 .pecado-tips { border-left-color: #f39c12; }
+        .pecado-4 .pecado-tips { border-left-color: #9b59b6; }
+        .pecado-5 .pecado-tips { border-left-color: #3498db; }
+        .pecado-6 .pecado-tips { border-left-color: #1abc9c; }
+        .pecado-7 .pecado-tips { border-left-color: #c0392b; }
+
+        .pecado-tips h4 {
+            color: #1a1a2e;
+            margin-bottom: 12px;
+            font-size: 0.95em;
+            font-weight: 600;
+        }
+
+        .pecado-tips ul {
+            margin-left: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .pecado-tips li {
+            margin-bottom: 6px;
+            list-style: none;
+        }
+
+        .pecado-tips li::before {
+            content: '✓ ';
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* MANDAMIENTOS */
+        .mandamientos-section {
+            margin-bottom: 60px;
+        }
+
+        .mandamientos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .mandamiento-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #667eea;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .mandamiento-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mandamiento-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 45px rgba(102, 126, 234, 0.2);
+        }
+
+        .mandamiento-card:hover::before {
+            opacity: 1;
+        }
+
+        .mandamiento-number {
+            position: relative;
+            z-index: 1;
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3em;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .mandamiento-content {
+            position: relative;
+            z-index: 1;
+            flex-grow: 1;
+        }
+
+        .mandamiento-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #1a1a2e;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 60px;
+            box-shadow: 0 10px 40px rgba(15, 52, 96, 0.3);
+            color: white;
+        }
+
+        .footer-content {
+            margin-bottom: 25px;
+        }
+
+        .footer-content h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .footer-content p {
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .social-links a:hover {
+            background: #667eea;
+            border-color: #667eea;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95em;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.3em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            .pecados-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 60px 20px 50px;
+            }
+
+            .intro-section {
+                padding: 30px;
+            }
+
+            .section-title {
+                font-size: 1.8em;
+            }
+
+            .author-avatar {
+                width: 110px;
+                height: 110px;
+            }
+
+            .author-info h3 {
+                font-size: 1.4em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+
+            .intro-section {
+                padding: 20px;
+            }
+
+            .pecado-card {
+                padding: 25px;
+            }
+
+            header {
+                padding: 40px 15px;
+                border-radius: 15px;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Los 7 Pecados de la Marca Personal</h1>
+                <p class="subtitle">Guía profesional para construir una marca personal auténtica y sólida</p>
+                
+                <div class="author-profile">
+                    <img src="https://media.licdn.com/dms/image/v2/C4E03AQHqz0OZd9MLqA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1627068069648?e=1701302400&v=beta&t=..." alt="Jacqueline Noemy Osorio" class="author-avatar" onerror="this.style.display='none'">
+                    <div class="author-info">
+                        <h3>Jacqueline Noemy Osorio</h3>
+                        <p>Especialista en Marca Personal y Desarrollo Profesional</p>
+                        <a href="https://www.linkedin.com/in/jacqueline-noemy-osorio-96906722a/?skipRedirect=true" target="_blank" class="author-card">
+                            <i class="fab fa-linkedin"></i>
+                            Conecta en LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="intro-section">
+            <h2>¿Qué es la Marca Personal?</h2>
+            <p>La marca personal es la representación única de tu identidad, valores y expertise en el mundo profesional y digital. Es la percepción que otros tienen de ti, basada en tus acciones, palabras y presencia en diferentes plataformas.</p>
+            <p>En un mercado global altamente competitivo, tu marca personal es el diferenciador clave que te posiciona como profesional único. No es solo lo que dices de ti mismo, sino cómo los demás te perciben y hablan de ti.</p>
+            <p style="margin-top: 25px; padding-top: 25px; border-top: 2px solid #ecf0f1;"><strong>Dato relevante:</strong> Según investigaciones recientes, el 72% de los empleadores investigan la marca personal de los candidatos antes de una entrevista. Una marca personal bien gestionada puede abrirte oportunidades que nunca imaginaste.</p>
+        </div>
+
+        <div class="mandamientos-section">
+            <h2 class="section-title">Los 10 Mandamientos de la Marca Personal</h2>
+
+            <div class="mandamientos-grid">
+                <div class="mandamiento-card">
+                    <div class="mandamiento-number">1</div>
+                    <div class="mandamiento-content">
+                        <p class="mandamiento-title">Desarrollarás tu marca sobre todas las cosas</p>
+                    </div>
+                </div>
+
+                <div class="mandamiento-card">
+                    <div class="mandamiento-number">2</div>
+                    <div class="mandamiento-content">
+                        <p class="mandamiento-title">No tomarás el nombre de propia marca en vano</p>
+                    </div>
+                </div>
+
+                <div class="mandamiento-card">
+                    <div class="mandamiento-number">3</div>
+                    <div class="mandamiento-content">
+                        <p class="mandamiento-title">Te harás visible siempre que puedas</p>
+                    </div>
+                </div>
+
+                <div class="mandamiento-card">
+                    <div class="mandamiento-number">4</div>
+                    <div class="mandamiento-content">
+                        <p class="mandamiento-title">Honrarás tu misión, visión y tus valores</p>
+                    </div>
+                </div>
+
+                <div class="mandamiento-card">
+                    <div class="mandamiento-number">5</div>
+                    <div class="mandamiento-content">
+                        <p class="mandamiento-title">No te rendirás</p>
+                    </div>
+                </div>
+
+                <div class="mandamiento-card">
+                    <div class="mandamiento-number">6</div>
+                    <div class="mandamiento-content">
+                        <p class="mandamiento-title">Buscarás en ti argumentos diferenciales</p>
+                    </div>
+                </div>
+
+                <div class="mandamiento-card">
+                    <div class="mandamiento-number">7</div>
+                    <div class="mandamiento-content">
+                        <p class="mandamiento-title">No robarás valores ajenos</p>
+                    </div>
+                </div>
+
+                <div class="mandamiento-card">
+                    <div class="mandamiento-number">8</div>
+                    <div class="mandamiento-content">
+                        <p class="mandamiento-title">No cometerás falso testimonio, ni mentirás</p>
+                    </div>
+                </div>
+
+                <div class="mandamiento-card">
+                    <div class="mandamiento-number">9</div>
+                    <div class="mandamiento-content">
+                        <p class="mandamiento-title">No asumirás objetivos imposibles</p>
+                    </div>
+                </div>
+
+                <div class="mandamiento-card">
+                    <div class="mandamiento-number">10</div>
+                    <div class="mandamiento-content">
+                        <p class="mandamiento-title">No codiciciarás los éxitos ajenos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="seccion-pecados">
+            <h2 class="section-title">Los 7 Pecados que Dañan tu Marca</h2>
+
+            <div class="pecados-grid">
+                <!-- Pecado 1 -->
+                <div class="pecado-card pecado-1">
+                    <div class="pecado-icon">🥇</div>
+                    <h3 class="pecado-title">Soberbia</h3>
+                    <p class="pecado-description">Creer que eres superior a otros, mostrar arrogancia y falta de humildad. La soberbia cierra puertas de aprendizaje y desconecta de tu audiencia.</p>
+                    <div class="pecado-tips">
+                        <h4>Cómo evitarlo:</h4>
+                        <ul>
+                            <li>Mantén una actitud de aprendizaje continuo</li>
+                            <li>Reconoce públicamente los logros de otros</li>
+                            <li>Sé vulnerable en tus historias profesionales</li>
+                            <li>Solicita y acta sobre el feedback</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pecado 2 -->
+                <div class="pecado-card pecado-2">
+                    <div class="pecado-icon">👻</div>
+                    <h3 class="pecado-title">Invisibilidad</h3>
+                    <p class="pecado-description">No compartir tu conocimiento ni tener presencia digital. Si nadie te conoce, nadie podrá valorar tu expertise.</p>
+                    <div class="pecado-tips">
+                        <h4>Cómo evitarlo:</h4>
+                        <ul>
+                            <li>Publica contenido regularmente en redes</li>
+                            <li>Participa activamente en conversaciones</li>
+                            <li>Crea un portafolio o blog personal</li>
+                            <li>Asiste a eventos y realiza networking</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pecado 3 -->
+                <div class="pecado-card pecado-3">
+                    <div class="pecado-icon">💰</div>
+                    <h3 class="pecado-title">Avaricia</h3>
+                    <p class="pecado-description">Enfocarse únicamente en ganar dinero, clientes o seguidores sin aportar valor. La avaricia destruye la confianza y autenticidad.</p>
+                    <div class="pecado-tips">
+                        <h4>Cómo evitarlo:</h4>
+                        <ul>
+                            <li>Enfócate en dar valor primero</li>
+                            <li>Comparte conocimiento de forma gratuita</li>
+                            <li>Ayuda a otros sin esperar retorno inmediato</li>
+                            <li>La monetización llegará naturalmente</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pecado 4 -->
+                <div class="pecado-card pecado-4">
+                    <div class="pecado-icon">😠</div>
+                    <h3 class="pecado-title">Envidia</h3>
+                    <p class="pecado-description">Sentir resentimiento por el éxito de otros y criticar sus logros. La envidia te paraliza y refleja baja vibración profesional.</p>
+                    <div class="pecado-tips">
+                        <h4>Cómo evitarlo:</h4>
+                        <ul>
+                            <li>Celebra el éxito de otros colegas</li>
+                            <li>Usa otros logros como inspiración</li>
+                            <li>Enfócate en tu propia evolución</li>
+                            <li>Crea desde la abundancia, no desde la escasez</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pecado 5 -->
+                <div class="pecado-card pecado-5">
+                    <div class="pecado-icon">⚡</div>
+                    <h3 class="pecado-title">Reactividad</h3>
+                    <p class="pecado-description">Reaccionar emocionalmente ante críticas o cambios sin pensar. La reactividad daña tu reputación y muestra inmadurez profesional.</p>
+                    <div class="pecado-tips">
+                        <h4>Cómo evitarlo:</h4>
+                        <ul>
+                            <li>Respira antes de responder a críticas</li>
+                            <li>Filtra tus emociones antes de publicar</li>
+                            <li>Busca entender antes de juzgar</li>
+                            <li>Desarrolla resiliencia emocional</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pecado 6 -->
+                <div class="pecado-card pecado-6">
+                    <div class="pecado-icon">🔄</div>
+                    <h3 class="pecado-title">Falta de Creatividad</h3>
+                    <p class="pecado-description">Copiar a otros sin agregar perspectiva propia o ser genérico. Sin creatividad, tu marca se pierde en la multitud.</p>
+                    <div class="pecado-tips">
+                        <h4>Cómo evitarlo:</h4>
+                        <ul>
+                            <li>Desarrolla tu voz única y auténtica</li>
+                            <li>Experimenta con nuevos formatos</li>
+                            <li>Mezcla tu expertise con tu personalidad</li>
+                            <li>Toma riesgos calculados en tu contenido</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pecado 7 -->
+                <div class="pecado-card pecado-7">
+                    <div class="pecado-icon">😴</div>
+                    <h3 class="pecado-title">Apatía (Falta de Pasión)</h3>
+                    <p class="pecado-description">No mostrar entusiasmo por lo que haces o trabajar sin propósito. La apatía es contagiosa y repele oportunidades.</p>
+                    <div class="pecado-tips">
+                        <h4>Cómo evitarlo:</h4>
+                        <ul>
+                            <li>Conecta tu trabajo con tu propósito</li>
+                            <li>Muestra genuino interés en tu campo</li>
+                            <li>Comparte lo que te apasiona</li>
+                            <li>La energía auténtica atrae oportunidades</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <h3>Construye tu Marca Personal Hoy</h3>
+                <p>Tu marca es un proceso continuo. Empieza evitando estos 7 pecados y verás cómo tu presencia profesional se transforma.</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/jacqueline-noemy-osorio-96906722a/?skipRedirect=true" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                    Conectar en LinkedIn
+                </a>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Los 7 Pecados de la Marca Personal | Recurso Educativo</p>
+                <p style="margin-top: 8px; font-size: 0.9em;">Actualizado: Junio 2024</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
